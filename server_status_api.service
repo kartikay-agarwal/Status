@@ -1,0 +1,14 @@
+[Unit]
+Description=Server Status API
+
+[Service]
+ExecStart=/usr/bin/python3 /var/uptime/api.py
+WorkingDirectory=/var/uptime/
+Restart=always
+User=root
+Environment="PATH=/usr/bin/python3"
+Environment="FLASK_APP=/var/uptime/api.py"
+Environment="FLASK_ENV=production"
+
+[Install]
+WantedBy=multi-user.target
